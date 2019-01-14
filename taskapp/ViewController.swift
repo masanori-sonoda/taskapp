@@ -50,6 +50,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.delegate = self
         tableView.dataSource = self
         categorySearchText.delegate = self
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -110,6 +112,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             inputViewController.task = task
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     // Delete ボタンが押された時に呼ばれるメソッド
